@@ -3,9 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="CSS/homeCSS.css">
+    <title>Home Page</title>
 </head>
 <body>
-    
+    <div id="loading-screen">
+        <div class="background-animation"></div>
+        <div id="console-text">
+          <p class="line">Initializing portfolio system...</p>
+          <p class="line">Connecting to creativity database...</p>
+          <p class="line">Loading personal projects...</p>
+          <p class="line">System ready!</p>
+        </div>
+      </div>
+      <div id="main-content" style="display: none;">
+        <!-- Your main website content goes here -->
+        <div class="container">
+            <aside class="sidebar">
+                <h1 class="logo">My Portfolio</h1>
+                <nav>
+                    <ul>
+                        <li><a href="Home.html" class="active">Home</a></li>
+                        <li><a href="About.html">About Me</a></li>
+                        <li><a href="Projects.html">Projects</a></li>
+                    </ul>
+                </nav>
+            </aside>
+        </div>
+      </div>
+      
+      <script src="Javascript/homeJS.js"></script>
 </body>
 </html>

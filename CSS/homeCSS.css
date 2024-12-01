@@ -1,0 +1,177 @@
+/* Full-Screen Loading Screen */
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    z-index: 1000;
+    flex-direction: column;
+  }
+  
+  /* Centered Text */
+  #console-text {
+    position: relative;
+    text-align: center;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.5em;
+    z-index: 2;
+    font-weight: bolder;
+  }
+  
+  /* Text Animation */
+  .line {
+    display: none;
+  }
+  
+  /* Background Animation */
+  .background-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #111 25%, #333 50%, #111 75%);
+    background-size: 200% 200%;
+    animation: backgroundMove 4s infinite;
+    z-index: 1;
+  }
+  
+  @keyframes backgroundMove {
+    0% {
+      background-position: 0% 0%;
+    }
+    50% {
+      background-position: 100% 100%;
+    }
+    100% {
+      background-position: 0% 0%;
+    }
+  }
+  
+  /* Main Content */
+  #main-content {
+    display: none;
+    animation: fadeIn 1s ease-in forwards;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  :root {
+    --primary-color: #4A90E2;
+    --background-color: #f4f4f9;
+    --text-color: #333;
+    --sidebar-color: #2C3E50;
+    --sidebar-text-color: #ecf0f1;
+}
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    background: var(--sidebar-color);
+    color: var(--sidebar-text-color);
+    width: 250px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 1rem 0;
+}
+
+.sidebar ul li a {
+    color: var(--sidebar-text-color);
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+.sidebar ul li a:hover,
+.sidebar ul li a.active {
+    color: var(--primary-color);
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    background: var(--primary-color);
+    color: white;
+}
+
+header .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    color: white;
+    cursor: pointer;
+}
+
+section {
+    padding: 20px;
+}
+
+h1 {
+    color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+
+    .sidebar.active {
+        display: flex;
+        position: fixed;
+        height: 100%;
+        z-index: 1000;
+    }
+
+    header .menu-toggle {
+        display: block;
+    }
+}
+
+  
