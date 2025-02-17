@@ -7,30 +7,19 @@
     <title>Home Page</title>
 </head>
 <body>
-    <div id="loading-screen">
-        <div class="background-animation"></div>
-        <div id="console-text">
-          <p class="line">Initializing portfolio system...</p>
-          <p class="line">Connecting to creativity database...</p>
-          <p class="line">Loading personal projects...</p>
-          <p class="line">System ready!</p>
-        </div>
-      </div>
-      <div id="main-content" style="display: none;">
-        <!-- Your main website content goes here -->
-        <div class="container">
-            <aside class="sidebar">
-                <h1 class="logo">My Portfolio</h1>
-                <nav>
-                    <ul>
-                        <li><a href="Home.html" class="active">Home</a></li>
-                        <li><a href="About.html">About Me</a></li>
-                        <li><a href="Projects.html">Projects</a></li>
-                    </ul>
-                </nav>
-            </aside>
-        </div>
-      </div>
+    <div class="menu-container">
+        <button class="menu-btn" onclick="toggleSidebar()">&#9776;</button>
+    </div>
+    <div class="sidebar" id="sidebar">
+        <a href="/Home.html">🏠 Home</a>
+        <a href="/Projects.html">📂 Projects</a>
+        <a href="/Archives.html">🗃️ Archives</a>
+        <a href="/About.html">ℹ️ About</a>
+    </div>
+    <div class="main-content">
+        <h1>Welcome to My Portfolio</h1>
+        <p>This is my personal portfolio showcasing my projects and skills.</p>
+    </div>
       
       <script src="Javascript/homeJS.js"></script>
 </body>

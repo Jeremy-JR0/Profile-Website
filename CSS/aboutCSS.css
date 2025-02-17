@@ -1,73 +1,59 @@
-/* General Styles (shared theme) */
 :root {
   --primary-color: #4A90E2;
-  --background-color: #f4f4f9;
-  --text-color: #333;
-  --sidebar-color: #2C3E50;
+  --background-color: #121212;
+  --text-color: white;
+  --sidebar-color: #181818;
   --sidebar-text-color: #ecf0f1;
 }
-
 body {
+  font-family: Arial, sans-serif;
   margin: 0;
-  font-family: 'Arial', sans-serif;
-  color: var(--text-color);
-  background-color: var(--background-color);
-}
-
-.container {
-  display: flex;
-  height: 100vh;
-}
-
-.sidebar {
-  background: var(--sidebar-color);
-  color: var(--sidebar-text-color);
-  width: 250px;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-}
-
-.sidebar .logo {
-  font-size: 1.5em;
-  font-weight: bold;
-  margin-bottom: 2rem;
-}
-
-.sidebar ul {
-  list-style: none;
   padding: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
-
-.sidebar ul li {
-  margin: 1rem 0;
+.sidebar {
+  height: 100vh;
+  width: 290px;
+  position: fixed;
+  left: -250px;
+  top: 0;
+  background-color: var(--sidebar-color);
+  padding-top: 50px;
+  transition: left 0.3s;
+  padding-left: 40px;
 }
-
-.sidebar ul li a {
-  color: var(--sidebar-text-color);
+.sidebar a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px;
   text-decoration: none;
-  font-size: 1.1em;
-  transition: color 0.3s ease;
+  color: var(--sidebar-text-color);
+  font-size: 18px;
+  transition: background 0.3s;
 }
-
-.sidebar ul li a:hover,
-.sidebar ul li a.active {
-  color: var(--primary-color);
+.sidebar a:hover {
+  background-color: #333;
 }
-
-.content {
-  flex: 1;
+.menu-btn {
+  position: fixed;
+  left: 20px;
+  top: 20px;
+  font-size: 30px;
+  cursor: pointer;
+  color: var(--text-color);
+  background: none;
+  border: none;
+  z-index: 101;
+}
+.main-content {
+  margin-left: 100px;
   padding: 20px;
-  overflow-y: auto;
 }
-
-/* Page-specific styles for About */
-h1 {
-  color: var(--primary-color);
-  margin-bottom: 1rem;
-}
-
-.content p {
-  font-style: italic;
-  font-size: 1.2em;
+.menu-container {
+  position: fixed;
+  left: 10px;
+  top: 10px;
+  z-index: 102;
 }
