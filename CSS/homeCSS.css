@@ -11,10 +11,11 @@ body {
   padding: 0;
   background-color: var(--background-color);
   color: var(--text-color);
+  padding-left: 100px;
 }
 .sidebar {
   height: 100vh;
-  width: 290px;
+  width: 150px;
   position: fixed;
   left: -250px;
   top: 0;

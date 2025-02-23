@@ -1,215 +1,185 @@
 :root {
-    --primary-color: #4A90E2;
-    --background-color: #121212;
-    --text-color: white;
-    --sidebar-color: #181818;
-    --sidebar-text-color: #ecf0f1;
-  }
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: var(--background-color);
-    color: var(--text-color);
-  }
-  .sidebar {
-    height: 100vh;
-    width: 290px;
-    position: fixed;
-    left: -250px;
-    top: 0;
-    background-color: var(--sidebar-color);
-    padding-top: 60px;
-    transition: left 0.3s;
-    padding-left: 40px;
-  }
-  .sidebar a {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 15px;
-    text-decoration: none;
-    color: var(--sidebar-text-color);
-    font-size: 18px;
-    transition: background 0.3s;
-  }
-  .sidebar a:hover {
-    background-color: #333;
-  }
-  .menu-btn {
-    position: fixed;
-    left: 20px;
-    top: 20px;
-    font-size: 30px;
-    cursor: pointer;
-    color: var(--text-color);
-    background: none;
-    border: none;
-    z-index: 101;
-  }
-  .main-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  --primary-color: #4A90E2;
+  --background-color: #121212;
+  --text-color: white;
+  --sidebar-color: #181818;
+  --sidebar-text-color: #ecf0f1;
+}
 
-  }
-  .menu-container {
-    position: fixed;
-    left: 10px;
-    top: 10px;
-    z-index: 102;
-  }
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
 
-  .typewriter h1 {
-    color: #fff;
-    font-family: monospace;
-    overflow: hidden; /* Ensures the content is not revealed until the animation */
-    border-right: .15em solid orange; /* The typwriter cursor */
-    white-space: nowrap; /* Keeps the content on a single line */
-    letter-spacing: .15em; /* Adjust as needed */
-    text-align: left;
-    width: 0;
-    animation: 
+.sidebar {
+  height: 100vh;
+  width: 150px;
+  position: fixed;
+  left: -250px;
+  top: 0;
+  background-color: var(--sidebar-color);
+  padding-top: 60px;
+  transition: left 0.3s;
+  padding-left: 40px;
+}
+
+.sidebar a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px;
+  text-decoration: none;
+  color: var(--sidebar-text-color);
+  font-size: 18px;
+  transition: background 0.3s;
+}
+
+.sidebar a:hover {
+  background-color: #333;
+}
+
+.menu-btn {
+  position: fixed;
+  left: 20px;
+  top: 20px;
+  font-size: 30px;
+  cursor: pointer;
+  color: var(--text-color);
+  background: none;
+  border: none;
+  z-index: 101;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.typewriter h1 {
+  color: #fff;
+  font-family: monospace;
+  border-right: .15em solid orange;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  animation: 
       typing 3.5s steps(14, end) forwards,
       blink-caret .5s step-end infinite;
-  }
-  
-  /* The typing effect */
-  @keyframes typing {
-    from { width: 0 }
-    to { width: 14ch }
-  }
-  
-  /* The typewriter cursor effect */
-  @keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: orange }
-  }
+}
 
-  #portfolioInfo {
+@keyframes typing {
+  from { width: 0 }
+  to { width: 14ch }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange }
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  width: 80%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.project-card {
+  background: #1e1e1e;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+}
+
+.project-card h2 {
+  color: var(--primary-color);
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.project-card p {
+  color: #ccc;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.project-card button {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.project-card button:hover {
+  background: #357ABD;
+}
+
+/* Overlay Background */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Transparent sides */
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    overflow-y: auto;
+}
+
+/* Overlay Content Box */
+.overlay-content {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
     width: 80%;
-    padding: 50px 0;
+    max-width: 600px;
     text-align: center;
-    background-color: whitesmoke;
-    margin-top: 20px;
-    color: #121212;
-    border-radius: 20px;
-    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.2);
-  }
-
-  #IOT {
-    width: 80%;
-    padding: 50px 0;
-    text-align: center;
-    background-color: whitesmoke;
-    margin-top: 20px;
-    color: #121212;
-    border-radius: 20px;
-    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.2);
-  }
-
-  #Retro {
-    width: 80%;
-    padding: 50px 0;
-    text-align: center;
-    background-color: whitesmoke;
-    margin-top: 20px;
-    color: #121212;
-    border-radius: 20px;
-    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.2);
-  }
-
-  #Capstone {
-    width: 80%;
-    padding: 50px 0;
-    text-align: center;
-    background-color: whitesmoke;
-    margin-top: 20px;
-    color: #121212;
-    border-radius: 20px;
-    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.2);
-  }
-
-  #KR {
-    width: 80%;
-    padding: 50px 0;
-    text-align: center;
-    background-color: whitesmoke;
-    margin-top: 20px;
-    color: #121212;
-    border-radius: 20px;
-    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.2);
-  }
-
-  .button {
-    display: inline-block;
-    width: 60%;
-    margin: 20px auto;
-    transition: all 0.2s ease-in;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-    color: #090909;
-    padding: 0.7em 1.7em;
-    cursor: pointer;
-    font-size: 18px;
-    border-radius: 0.5em;
-    background: #e8e8e8;
-    border: 1px solid #e8e8e8;
-    box-shadow: 6px 6px 12px black, -6px -6px 12px black;
-    
-  }
-  
-  .button:active {
-    color: #666;
-    box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
-  }
-  
-  .button:before {
-    content: "";
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%) scaleY(1) scaleX(1.25);
-    top: 100%;
-    width: 140%;
-    height: 180%;
-    background-color: rgba(0, 0, 0, 0.05);
-    border-radius: 50%;
-    display: block;
-    transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
-    z-index: -1;
-  }
-  
-  .button:after {
-    content: "";
-    position: absolute;
-    left: 55%;
-    transform: translateX(-50%) scaleY(1) scaleX(1.45);
-    top: 180%;
-    width: 160%;
-    height: 190%;
-    background-color: #1B609D;
-    border-radius: 50%;
-    display: block;
-    transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
-    z-index: -1;
-  }
-  
-  .button:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+    animation: fadeIn 0.3s ease;
     color: black;
-    border: 1px solid #1B609D;
-  }
-  
-  .button:hover:before {
-    top: -35%;
-    background-color: #4E6D96;
-    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
-  }
-  
-  .button:hover:after {
-    top: -45%;
-    background-color: #1B609D;
-    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
-  }
-  
+}
+
+/* Animation for Overlay */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Close Button */
+.overlay-content button {
+    background: #4A90E2;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.overlay-content button:hover {
+    background: #357ABD;
+}
+
+
