@@ -9,11 +9,11 @@ function toggleSidebar() {
 
 function onOverlay(overlayId) {
     document.getElementById(overlayId).style.display = "flex";
-    document.body.style.overflow = "hidden"; // Prevent background scroll
+    document.body.style.overflow = "hidden"; 
 }
 
 function offOverlay(overlayId) {
     document.getElementById(overlayId).style.display = "none";
-    document.body.style.overflow = "auto"; // Re-enable background scroll
+    document.body.style.overflow = "auto"; 
 }
 

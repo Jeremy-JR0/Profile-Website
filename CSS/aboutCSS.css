@@ -11,6 +11,7 @@ body {
   padding: 0;
   background-color: var(--background-color);
   color: var(--text-color);
+  padding-left: 100px;
 }
 .sidebar {
   height: 100vh;
@@ -82,4 +83,56 @@ body {
 @keyframes blink-caret {
   from, to { border-color: transparent }
   50% { border-color: orange }
+}
+
+.about-text{
+  margin: 20px;
+  font-size: 1.1rem;
+}
+
+.skill-section{
+  margin: 30px;
+}
+
+.skills-display ul {
+  list-style-type: square;
+  margin-top: 20px;
+}
+
+.skills-display li {
+  margin: 5px 0;
+}
+
+.about-text {
+  background: #1e1e1e;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;  /* This controls space between icons */
+  margin-top: 20px;
+}
+
+.skill-icon {
+  width: 150px;
+  height: 150px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* White glow */
+  border-radius: 10px; /* Optional: rounded edges */
+  
+}
+
+.skill-icon:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.6); /* Stronger glow on hover */
+}
+
+.skill-icon.github-icon {
+  filter: brightness(0) invert(1);
+  mix-blend-mode: normal;
 }
