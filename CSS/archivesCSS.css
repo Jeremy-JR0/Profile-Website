@@ -51,12 +51,12 @@
   .main-content {
     margin-left: 100px;
     padding: 20px;
+    z-index: 900;
   }
   .menu-container {
     position: fixed;
     left: 10px;
     top: 10px;
-    z-index: 102;
   }
 
   .typewriter h1 {

@@ -65,6 +65,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 900;
 }
 
 
@@ -126,7 +127,7 @@ h1, h2, p {
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 999;
+  z-index: 900;
   pointer-events: none;
   display: flex;
   justify-content: center;
