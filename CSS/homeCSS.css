@@ -469,8 +469,8 @@ h1, h2, p {
   position: absolute;
   top: 0; right: 0; bottom: 0; left: 0;
   margin: auto;
-  width: 40vw;
-  height: 40vw;
+  width: 100%;
+  height: 100%;
   animation: rhombus_box 0.4s linear 3.55s forwards;
 }
 
@@ -500,12 +500,12 @@ h1, h2, p {
 
 @keyframes rhombus_item01 {
   0% { transform: translateX(0); opacity: 1; }
-  100% { transform: translateX(-18.5vw); opacity: 1; }
+  100% { transform: translateX(-5.5vw); opacity: 1; }
 }
 
 @keyframes rhombus_item02 {
   0% { transform: translateX(0); opacity: 1; }
-  100% { transform: translateX(18.5vw); opacity: 1; }
+  100% { transform: translateX(5.5vw); opacity: 1; }
 }
 
 @keyframes rhombus_box {
@@ -545,7 +545,7 @@ h1, h2, p {
 }
 
 /* White circle */
-.white02 { top: -100%; animation-delay: 4.7s; }
+.white02 { top: -100%; animation-delay: 3.7s; }
 
 .white01 {
   width: 29vw;
@@ -562,7 +562,7 @@ h1, h2, p {
   width: 29vw;
   height: 29vw;
   transform-origin: left 14.5vw;
-  animation: rotate-circle-right 0.3s linear 4.7s forwards;
+  animation: rotate-circle-right 0.3s linear 3.7s forwards;
 }
 
 .white01::after {
@@ -571,7 +571,7 @@ h1, h2, p {
   width: 29vw;
   height: 29vw;
   transform-origin: right 14.5vw;
-  animation: rotate-circle-left 0.3s linear 4.7s forwards;
+  animation: rotate-circle-left 0.3s linear 3.7s forwards;
 }
 
 @keyframes rotate-circle-left {
@@ -588,7 +588,7 @@ h1, h2, p {
 }
 
 /* Gray circle */
-.gray02 { top: -200%; animation-delay: 4.8s; }
+.gray02 { top: -200%; animation-delay: 4.1s; }
 
 .gray01 {
   width: 8vw;
@@ -606,7 +606,7 @@ h1, h2, p {
   height: 8vw;
   background: #fff;
   transform-origin: left 4vw;
-  animation: rotate-circle-right 0.5s linear 4.8s forwards;
+  animation: rotate-circle-right 0.5s linear 4.1s forwards;
 }
 
 .gray01::after {
@@ -616,7 +616,7 @@ h1, h2, p {
   height: 8vw;
   background: #fff;
   transform-origin: right 4vw;
-  animation: rotate-circle-left03 0.5s linear 4.8s forwards;
+  animation: rotate-circle-left03 0.5s linear 4.1s forwards;
 }
 
 @keyframes rotate-circle-left03 {
@@ -627,7 +627,7 @@ h1, h2, p {
 }
 
 /* Color circle */
-.color02 { top: -300%; animation-delay: 5.3s; }
+.color02 { top: -300%; animation-delay: 4.5s; }
 
 .color01 {
   width: 27vw;
@@ -637,7 +637,7 @@ h1, h2, p {
   left: 50%;
   transform: translate(-50%, -50%) scale(0);
   border-radius: 50%;
-  animation: expandCircle 0.6s ease-out 5.3s forwards;
+  animation: expandCircle 0.6s ease-out 4.5s forwards;
 }
 
 @keyframes expandCircle {
@@ -664,7 +664,7 @@ h1, h2, p {
   transform: translate(-50%, -50%);
   width: 30vw;
   height: 30vw;
-  animation: nameFadeIn 1s ease 5.9s forwards;
+  animation: nameFadeIn 1s ease 4.7s forwards;
   opacity: 0;
   z-index: 5; /* Make sure it's above the colored circle */
   pointer-events: auto;
@@ -786,3 +786,70 @@ h1, h2, p {
   }
 }
 
+.rhombus-link {
+  position: absolute;
+  width: 2.1vw;
+  height: 2.1vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  text-decoration: none;
+}
+
+.rhombus-link-group {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  animation: revealLabel 0.4s ease-out 5.9s forwards;
+  pointer-events: auto;
+}
+
+
+.rhombus-left {
+  top: 50%;
+  left: calc(50% - 18.5vw);
+  transform: translate(-50%, -50%);
+}
+
+.rhombus-right {
+  top: 50%;
+  left: calc(50% + 18.5vw);
+  transform: translate(-50%, -50%);
+}
+
+.rhombus_item {
+  width: 2.1vw;
+  height: 2.1vw;
+  background-color: white;
+  transform: rotate(45deg);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.rhombus_item:hover {
+  transform: rotate(45deg) scale(1.2);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.rhombus-label {
+  margin-top: 0.8vw;
+  font-size: 1vw;
+  color: white;
+  font-family: monospace;
+  pointer-events: none;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes revealLabel {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}

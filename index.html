@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="CSS/homeCSS.css" />
-  <title>Home Page</title>
+  <title>Home</title>
 </head>
 <body>
   <!-- Menu Button -->
@@ -15,9 +15,9 @@
   <!-- Sidebar Navigation -->
   <div class="sidebar" id="sidebar">
     <a href="/Profile-Website/index.html">🏠 Home</a>
-        <a href="/Profile-Website/Projects.html">📂 Projects</a>
-        <a href="/Profile-Website/Archives.html">🗃️ Archives</a>
-        <a href="/Profile-Website/About.html">ℹ️ About</a>
+    <a href="/Profile-Website/Projects.html">📂 Projects</a>
+    <a href="/Profile-Website/Archives.html">🗃️ Archives</a>
+    <a href="/Profile-Website/About.html">ℹ️ About</a>
   </div>
 
   <!-- Boot-Up Animation -->
@@ -59,15 +59,29 @@
     </div>
 
     <div class="animation02">
-    <div class="ripple"></div>
+      <div class="ripple"></div>
+
       <div class="rhombus_box">
-        <span class="rhombus_item_wrapper rhombus_item01_wrapper">
-          <span class="rhombus_item"></span>
-        </span>
-        <span class="rhombus_item_wrapper rhombus_item02_wrapper">
-          <span class="rhombus_item"></span>
-        </span>
-      </div>
+        <!-- LEFT rhombus + label -->
+        <div class="rhombus-link-group rhombus-left">
+          <a href="/Profile-Website/Projects.html" class="rhombus-link">
+            <span class="rhombus_item_wrapper rhombus_item01_wrapper">
+              <span class="rhombus_item"></span>
+            </span>
+          </a>
+          <span class="rhombus-label"> &lt;-- Projects</span>
+        </div>
+
+        <!-- RIGHT rhombus + label -->
+        <div class="rhombus-link-group rhombus-right">
+          <a href="/Profile-Website/About.html" class="rhombus-link">
+            <span class="rhombus_item_wrapper rhombus_item02_wrapper">
+              <span class="rhombus_item"></span>
+            </span>
+          </a>
+          <span class="rhombus-label">About Me --&gt;</span>
+        </div>
+
       <div class="double_content">
         <div class="double_wrapper02 dotted02">
           <div class="dotted_hide">
@@ -86,18 +100,18 @@
           <div class="double_wrapper01 color01"></div>
         </div>
       </div>
+
       <div class="name">
         <p>Jeremy Robertson</p>
 
         <div class="social-icons">
-            <a href="https://github.com/Jeremy-JR0" target="_blank" aria-label="GitHub">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub" class="icon-img" />
-            </a>
-            <a href="https://www.linkedin.com/in/jeremy-robertson-774915285/" target="_blank" aria-label="LinkedIn">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-plain.svg" alt="LinkedIn" class="icon-img" />
-            </a>
-          </div>
-          
+          <a href="https://github.com/Jeremy-JR0" target="_blank" aria-label="GitHub">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub" class="icon-img" />
+          </a>
+          <a href="https://www.linkedin.com/in/jeremy-robertson-774915285/" target="_blank" aria-label="LinkedIn">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-plain.svg" alt="LinkedIn" class="icon-img" />
+          </a>
+        </div>
 
         <span class="name_circle01"></span>
         <span class="name_circle02"></span>
@@ -105,9 +119,8 @@
     </div>
   </div>
 
-  <!-- Main Page Content Goes Here -->
   <div class="main-content">
-    <!-- Your homepage content can go here -->
+    <!-- Homepage content goes here -->
   </div>
 
   <script src="Javascript/homeJS.js" defer></script>
