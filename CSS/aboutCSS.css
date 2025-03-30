@@ -22,7 +22,7 @@ body {
   padding-top: 60px;
   transition: left 0.3s;
   padding-left: 40px;
-  z-index: 1001;
+  z-index: 9998;
 }
 .sidebar a {
   display: flex;
@@ -46,20 +46,20 @@ body {
   color: var(--text-color);
   background: none;
   border: none;
-  z-index: 1002;
+  z-index: 101;
 }
 .main-content {
   max-width: 1200px;
   margin: 40px auto 0 auto;
   padding: 20px;
   position: relative;
-  z-index: 900; 
+  z-index: 1; 
 }
 .menu-container {
   position: fixed;
   left: 10px;
   top: 10px;
-  z-index: 102;
+  z-index: 9999;
 }
 
 .typewriter h1 {
