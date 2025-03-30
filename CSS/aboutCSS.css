@@ -75,7 +75,6 @@ body {
     blink-caret .5s step-end infinite;
 }
 
-/* The typing effect */
 @keyframes typing {
   from { width: 0 }
   to { width: 10ch }
@@ -83,6 +82,31 @@ body {
 
 /* The typewriter cursor effect */
 @keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange }
+}
+
+.typewriterLong h1 {
+  color: #fff;
+  font-family: monospace;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  letter-spacing: .15em; /* Adjust as needed */
+  text-align: left;
+  width: 0;
+  animation: 
+    typingLong 3.5s steps(14, end) forwards,
+    blink-caretLong .5s step-end infinite;
+}
+
+@keyframes typingLong {
+  from { width: 0 }
+  to { width: 17.5ch }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caretLong {
   from, to { border-color: transparent }
   50% { border-color: orange }
 }
