@@ -39,7 +39,7 @@
                 <button onclick="onOverlay('overlayRetro')">Learn More</button>
             </div>
             <div class="project-card">
-                <h2>Capstone Project</h2>
+                <h2>Moving Target Defence</h2>
                 <p>Web-based application for learning Moving Target Defense techniques.</p>
                 <button onclick="onOverlay('overlayCapstone')">Learn More</button>
             </div>
@@ -65,7 +65,16 @@
     <div id="overlayPortfolio" class="overlay">
         <div class="overlay-content">
             <h2>Portfolio Website</h2>
-            <p>This portfolio website serves as a centralized showcase of my coding projects, highlighting my skills in web development.</p>
+            <p>A fully responsive and animated portfolio website built from scratch using HTML, CSS, and JavaScript. This project showcases my skills, experiences, and personal 
+                projects in a structured and visually engaging format. The site features a dynamic sidebar navigation system, and a section-based layout that highlights different
+                pages such as Home, Projects, Archives, and About Me. All interactions are handled with JavaScript, and the site is deployed using GitHub Pages for public access.</p>
+            <h3>System Features</h3>
+            <ul class="list">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>Javascript</li>
+                <li>GitHub Deployment</li>
+            </ul>
             <button onclick="offOverlay('overlayPortfolio')">Close</button>
         </div>
     </div>
@@ -74,7 +83,60 @@
     <div id="overlayIOT" class="overlay">
         <div class="overlay-content">
             <h2>Smart Plant Health Monitoring</h2>
-            <p>Automated plant care system using IoT and AWS cloud integration with real-time monitoring.</p>
+            <p>A comprehensive IoT-based plant care system designed to monitor and maintain optimal plant health through automation and user interaction. Built around a Raspberry Pi, 
+                the system collects real-time environmental data using multiple sensors and performs automated actions like watering and lighting. A custom-built web dashboard 
+                provides live insights, historical trends, and manual control options, making the system suitable for both busy plant owners and remote monitoring.</p>
+                <p> I co-developed this project alongside three other team members. My primary responsibilities included establishing cloud connectivity using AWS services, such as 
+                    configuring AWS IoT Core, setting up AWS Lambda functions, managing data storage with DynamoDB, and integrating API Gateway for communication between the frontend 
+                    and backend. I also handled much of the sensor integration and programming, as well as designing and implementing the layout for the web dashboard.
+                </p>
+                <h3>System Features</h3>
+            <ul class="list">
+                <li>Sensor Monitoring: Continuously tracks soil moisture, temperature, humidity, sunlight, pH levels, and water reservoir level using multiple sensors.</li>
+                <li>Automated Plant Care:
+                    <ul>
+                        <li>Activates a water pump when soil moisture is below plant-specific thresholds</li>
+                        <li>Turns on LED light if sunlight levels are insufficient</li>
+                    </ul>
+                </li>
+                <li>Manual Controls:
+                    <ul>
+                        <li>Users can manually trigger the pump and grow light from the dashboard</li>
+                        <li>A "Calibrate Water Level" button sends a custom MQTT payload to adjust the base water level reference</li>
+                    </ul>
+                </li>
+                <li>Camera Integration: Captures plant images and checks for signs of distress (e.g., color changes or spots), with plans to identify the plant type and adjust 
+                    thresholds accordingly</li>
+                <li>Cloud Connectivity:
+                    <ul>
+                        <li>Uses AWS IoT Core with MQTT for secure bi-directional communication</li>
+                        <li>AWS Lambda functions handle requests/responses between the device and cloud</li>
+                        <li>DynamoDB stores both live sensor data and historical logs</li>
+                    </ul>
+                </li>
+                <li>Web Dashboard:
+                    <ul>
+                        <li>Displays current sensor data, comparison with recommended values, and visual graphs</li>
+                        <li>Offers user-friendly controls and feedback for real-time interaction</li>
+                    </ul>
+                </li>
+
+            </ul>
+            <h3>Skills</h3>
+            <ul class="list">
+                <li>IOT & Embedded Systems - Sensor integration, GPIO control, Real time data collection on Raspberry Pi, Hardware Setup</li>
+                <li>Cloud and Networking - AWS IoT Core, AWS Lambda, DynamoDB, API Gateway</li>
+                <li>React.js</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>Python</li>
+            </ul>
+            <div class="slideshow-container" id="slideshowIOT">
+                <img class="slide" src="Images/IoT Plant Final.jpg" alt="Plant">
+                <img class="slide" src="Images/Website IoT Plant.jpg" alt="Dashboard">
+                <a class="prev" onclick="changeSlide(-1, 'slideshowIOT')">&#10094;</a>
+                <a class="next" onclick="changeSlide(1, 'slideshowIOT')">&#10095;</a>
+              </div>
             <button onclick="offOverlay('overlayIOT')">Close</button>
         </div>
     </div>
@@ -83,7 +145,28 @@
     <div id="overlayRetro" class="overlay">
         <div class="overlay-content">
             <h2>Retro Console</h2>
-            <p>Interactive gaming console featuring classic games and multiplayer mode.</p>
+            <p>A fully custom-built retro-style game console using LilyGO T-Display S3 microcontrollers and ESP-NOW for low-latency wireless multiplayer support. The system mimics 
+                the feel of classic consoles, booting into a select screen where users can choose between multiple games, including single- and multiplayer options. One LilyGO device 
+                serves as the main console connected to a display, while others act as wireless controllers. Game files are loaded dynamically from an SD card, and high scores are 
+                saved to individual leaderboard files.
+            </p>
+            <p> I co-developed this project with a team of three other members. My key contributions included establishing the wireless communication between the console and two 
+                controllers using ESP-NOW. I led the development of the games, adapting pre-existing code for compatibility with the console—such as Pong and Snake—and also 
+                contributed to the creation of a custom "3D" shooter game. Additionally, I assisted with embedded systems work, including implementing SD card functionality for game 
+                and leaderboard storage.
+            </p>
+            <h3>System Features</h3>
+            <ul class="list">
+                <li>Wireless Controller Support</li>
+                <li>Game Selection Menu</li>
+                <li>Leaderboard System</li>
+                <li>Multiplayer Games</li>
+            </ul>
+            <h3>Skills</h3>
+            <ul class="list">
+                <li>Embedded Systems - ESP32 Programming, GPIO Mapping, Hardware Setup</li>
+                <li>C Programming</li>
+            </ul>
             <button onclick="offOverlay('overlayRetro')">Close</button>
         </div>
     </div>
@@ -91,8 +174,29 @@
     <!-- Overlay for Capstone Project -->
     <div id="overlayCapstone" class="overlay">
         <div class="overlay-content">
-            <h2>Capstone Project</h2>
-            <p>Web-based application for learning Moving Target Defense techniques using Vue.js and Docker integration.</p>
+            <h2>Moving Target Defence</h2>
+            <p>This capstone project is a web-based simulation tool designed to help users understand and visualize Moving Target Defence (MTD) techniques in cybersecurity. 
+                Built on top of the existing MTDSimTime framework, the application allows users to configure, run, and analyze simulated attacks and defenses across up to five 
+                graphs simultaneously. The simulator is fully containerized with Docker, making it easy to deploy locally or remotely. Users can customize parameters, save and 
+                submit multiple simulation scenarios, and view results such as compromised nodes, attack techniques, and defense actions. The frontend provides interactive graph 
+                visualizations and statistical breakdowns for each simulation. The application includes support for **advanced configuration** and has been structured for future 
+                expansion with minimal backend adjustments. My contributions included collaborative development across both frontend and backend components, Docker 
+                containerization for deployment, and documentation of system usage and simulation workflows. 
+            </p>
+            <h3>Skills</h3>
+            <ul class="list">
+                <li>Python</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>Vue.js</li>
+                <li>Docker</li>
+            </ul>
+            <div class="slideshow-container" id="slideshowMTD">
+                <img class="slide" src="Images/MTD Sim Panel.png" alt="Plant">
+                <img class="slide" src="Images/MTD Sim Panel.png" alt="Dashboard">
+                <a class="prev" onclick="changeSlide(-1, 'slideshowIOT')">&#10094;</a>
+                <a class="next" onclick="changeSlide(1, 'slideshowIOT')">&#10095;</a>
+              </div>
             <button onclick="offOverlay('overlayCapstone')">Close</button>
         </div>
     </div>
@@ -101,7 +205,19 @@
     <div id="overlayKR" class="overlay">
         <div class="overlay-content">
             <h2>UWA Book of Knowledge</h2>
-            <p>Knowledge representation project using RDF, SPARQL, and OWL ontologies.</p>
+            <p>The UWA Book of Knowledge is a semantic web project focused on structuring and querying academic data from the UWA Handbook using knowledge representation techniques. 
+                Developed in collaboration with one other team member, the project uses RDF, SPARQL, SHACL, and OWL ontologies to represent, validate, and reason 
+                about relationships between university units and majors. As I co-develeped this project my main responsibilities were, designing and implementing the RDF structure 
+                and building the SPARQL query system. The project enables users to run both dynamic and static queries on the handbook data through a custom-built CLI interface. 
+            </p>
+            <h3>Skills</h3>
+            <ul class="list">
+                <li>Python</li>
+                <li>Resource Description Framework (RDF)</li>
+                <li>SPARQL</li>
+                <li>SHACL</li>
+                <li>Owl Ontologies</li>
+            </ul>
             <button onclick="offOverlay('overlayKR')">Close</button>
         </div>
     </div>
@@ -110,16 +226,30 @@
     <div id="overlayCER" class="overlay">
         <div class="overlay-content">
             <h2>Travel Countdown and Exchange Rate Checker</h2>
-            <p>A personal project</p>
+            <p>A fun personal project built using Python’s Tkinter library, designed to track the countdown to an upcoming group trip to Japan. The application features a live 
+                countdown timer and displays the current exchange rate (AUD to JPY), helping the group stay both excited and financially prepared. The user interface is clean and 
+                simple, making it easy to check time remaining and conversion rates at a glance.</p>
+                <h3>Skills</h3>
+                <ul class="list">
+                    <li>Python</li>
+                    <li>Library Manipulation: Tkinter and datetime</li>
+                </ul>
             <button onclick="offOverlay('overlayCER')">Close</button>
         </div>
     </div>
 
-    <!-- Overlay Countdown and Exchange Rate -->
+    <!-- Overlay Image Editor-->
     <div id="overlayIM" class="overlay">
         <div class="overlay-content">
             <h2>Image Editor</h2>
-            <p>Using the understanding of Computer Vision to edit images, videos and gifs</p>
+            <p>This ongoing project is an image editor built using Python's Tkinter library for the GUI, allowing users to load and apply various filters to images. It leverages 
+                foundational concepts in computer vision to implement effects such as low-pass (blurring), high-pass (sharpening), and edge detection using Sobel, Canny, and 
+                Laplacian of Gaussian filters. Future plans include extending support for video and GIF editing, making it a versatile tool for media processing.</p>
+                <h3>Skills</h3>
+                <ul class="list">
+                    <li>Python</li>
+                    <li>Library Manipulation: Tkinter, OpenCV, NumPy, Pillow (PIL)</li>
+                </ul>
             <button onclick="offOverlay('overlayIM')">Close</button>
         </div>
     </div>
